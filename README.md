@@ -16,7 +16,7 @@ https://docs.google.com/spreadsheets/d/1J5YrIya-yduiAqBC-dEHyBYZ8Ev3KsTM6fyP7DsK
 
 ## Usage
 To use the application, follow these steps:
-1. Open the project URL: `https://yourusername.github.io/yourrepositoryname/`
+1. Open the project URL: `https://yourusername.github.io/msarczar/Planet-Zoo-Animal-Compatibility`
 2. Use the dropdown menus to select one or two animals.
 3. Click the "Check Compatibility" button to display the compatibility results.
 
@@ -28,11 +28,11 @@ This project is hosted on GitHub Pages and does not require any installation. Ho
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/mtrehn/PlanetZooCompatibility.git
+    git clone https://github.com/msarczar/Planet-Zoo-Animal-Compatibility.git
     ```
 2. **Navigate into the repository directory**:
     ```bash
-    cd PlanetZooCompatibility
+    cd Planet-Zoo-Animal-Compatibility
     ```
 
 ## Contributing
@@ -47,6 +47,6 @@ Please read `CONTRIBUTING.md` for details on our code of conduct, and the proces
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Contact
-- Project Link: `https://github.com/mtrehn/PlanetZooCompatibility/`
-- Issue Tracker: `https://github.com/mtrehn/PlanetZooCompatibility/issues`
+- Project Link: `https://github.com/msarczar/Planet-Zoo-Animal-Compatibility/`
+- Issue Tracker: `https://github.com/msarczar/Planet-Zoo-Animal-Compatibility/issues`
 
