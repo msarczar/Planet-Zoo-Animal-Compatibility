@@ -16,7 +16,7 @@ https://docs.google.com/spreadsheets/d/1J5YrIya-yduiAqBC-dEHyBYZ8Ev3KsTM6fyP7DsK
 
 ## Usage
 To use the application, follow these steps:
-1. Open the project URL: `https://yourusername.github.io/msarczar/Planet-Zoo-Animal-Compatibility`
+1. Open the project URL: `https://msarczar.github.io/msarczar/Planet-Zoo-Animal-Compatibility`
 2. Use the dropdown menus to select one or two animals.
 3. Click the "Check Compatibility" button to display the compatibility results.
 
