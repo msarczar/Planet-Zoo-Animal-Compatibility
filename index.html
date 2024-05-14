@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Animal Compatibility Checker</title>
+<!-- Including Google Fonts for Bowlby One SC and Noto Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Noto+Sans&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Noto Sans', sans-serif; /* Using Noto Sans for the body text */
+        background-color: #139B6D; /* Background color */
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    h1 {
+        color: white; /* Header text color */
+        font-weight: normal; /* Normal font weight for the header */
+        font-family: 'Bowlby One SC', sans-serif; /* Using Bowlby One SC for the header */
+        font-size: 36px; /* Increased font size for header */
+    }
+    .description {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #f4f4f9; /* Light color for better readability on the dark background */
+    }
+    a {
+        color: #FFD700; /* Golden link color for better visibility */
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    select {
+        font-family: Arial, sans-serif; /* Change font to Arial for select elements */
+        margin-right: 20px;
+        width: 300px; /* Adjust width as necessary */
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+    }
+    button {
+        background-color: #ff9017;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    button:hover {
+        background-color: #eb8515;
+    }
+    #results {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    p {
+        margin: 10px 0;
+    }
+    
+    /* Compatibility colors with highlighted background */
+    .compatibility-4 { background-color: #cf7fe5; color: black; padding: 0.2em; } /* Lavender */
+    .compatibility-3 { background-color: #7fc5e5; color: black; padding: 0.2em; } /* Aquamarine blue */
+    .compatibility-2 { background-color: #b3e57f; color: black; padding: 0.2em; } /* Yellow green */
+    .compatibility-1 { background-color: #fcc468; color: black; padding: 0.2em; } /* Yellow orange */
+    .compatibility-0 { background-color: #fc6892; color: black; padding: 0.2em; } /* Violet red */
+</style>
+</head>
+<body>
+<h1>Animal Compatibility Checker</h1>
+<p class="description">
+    Please use this site to check compatibility for any animal in Planet Zoo based on their habitat and behavioral needs. Current as of Barnyard Animals Pack. Data is sourced from <a href="https://www.reddit.com/r/PlanetZoo/comments/1chqpac/sharing_my_google_sheets_again_up_to_date_for_the/" target="_blank">Villanelle's Planet Zoo Data Chest</a>.
+</p>
+<form id="compatibilityForm">
+    <label for="species1">Select Species 1:</label>
+    <select id="species1" name="species1" required>
+        <!-- Options will be populated by JavaScript -->
+    </select>
+
+    <label for="species2">Select Species 2 (optional):</label>
+    <select id="species2" name="species2">
+        <option value="">Choose an animal (optional)</option>
+        <!-- Options will be populated by JavaScript -->
+    </select>
+
+    <button type="submit">Check Compatibility</button>
+</form>
+
+<div id="results"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
