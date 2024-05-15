@@ -45,6 +45,17 @@ function populateDropdown(dropdown, data, includeEmpty = false) {
 // Function to display compatibility results
 function displayCompatibility(data, species1, species2, resultsDiv) {
     let html = '';
+    // Define a list of animals to highlight
+    const highlightedAnimals = new Set([
+    "African Wild Dog", "American Alligator", "Amur Leopard", "Arctic Fox", 
+    "Arctic Wolf", "Asian Water Monitor", "Bengal Tiger", "Caracal", 
+    "Cheetah", "Clouded Leopard", "Cougar", "Dhole", "Dingo", "Eurasian Lynx", 
+    "Formosan Black Bear", "Fossa", "Grizzly Bear", "Himalayan Brown Bear", 
+    "Jaguar", "Komodo Dragon", "Nile Monitor", "Polar Bear", "Red Fox", 
+    "Saltwater Crocodile", "Sand Cat", "Siberian Tiger", "Snow Leopard", 
+    "Spotted Hyena", "Striped Hyena", "Tasmanian Devil", "Timber Wolf", 
+    "West African Lion", "Wolverine"]);
+
     if (species1 && species2 && species1 === species2) {
         // If the same species is selected, give em heck
         html = `<p>Looks like ${species1} really likes its own company! Try selecting different animals for a real compatibility check.</p>`;
@@ -69,7 +80,11 @@ function displayCompatibility(data, species1, species2, resultsDiv) {
 
             html += `<p>Compatibility for ${species1} with others:</p>`;
             Object.keys(compatibilityLevels).sort((a, b) => b - a).forEach(level => {
-                let animals = compatibilityLevels[level].join(', ');
+                let animals = compatibilityLevels[level].map(animal => 
+                    highlightedAnimals.has(animal) 
+                    ? `<span class="highlighted-animal">${animal}</span>` 
+                    : animal
+                ).join(', ');
                 html += `<p><span class="compatibility-${level}">${getCompatibilityDescription(level)}:</span> ${animals}</p>`;
             });
         } else {
