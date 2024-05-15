@@ -28,36 +28,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to populate dropdowns
 function populateDropdown(dropdown, data, includeEmpty = false) {
+    const highlightedAnimals = new Set([
+        "African Wild Dog", "American Alligator", "Amur Leopard", "Arctic Fox", 
+        "Arctic Wolf", "Asian Water Monitor", "Bengal Tiger", "Caracal", 
+        "Cheetah", "Clouded Leopard", "Cougar", "Dhole", "Dingo", "Eurasian Lynx", 
+        "Formosan Black Bear", "Fossa", "Grizzly Bear", "Himalayan Brown Bear", 
+        "Jaguar", "Komodo Dragon", "Nile Monitor", "Polar Bear", "Red Fox", 
+        "Saltwater Crocodile", "Sand Cat", "Siberian Tiger", "Snow Leopard", 
+        "Spotted Hyena", "Striped Hyena", "Tasmanian Devil", "Timber Wolf", 
+        "West African Lion", "Wolverine"
+    ]);
+
     if (includeEmpty) {
         const defaultOption = document.createElement('option');
         defaultOption.textContent = 'None';
         defaultOption.value = '';
         dropdown.appendChild(defaultOption);
     }
-    for (const animal in data) {
+    Object.keys(data).forEach(animal => {
         const option = document.createElement('option');
         option.textContent = animal;
         option.value = animal;
+        if (highlightedAnimals.has(animal)) {
+            option.classList.add('highlighted-animal');
+        }
         dropdown.appendChild(option);
-    }
+    });
 }
 
 // Function to display compatibility results
 function displayCompatibility(data, species1, species2, resultsDiv) {
     let html = '';
-    // Define a list of animals to highlight
-    const highlightedAnimals = new Set([
-    "African Wild Dog", "American Alligator", "Amur Leopard", "Arctic Fox", 
-    "Arctic Wolf", "Asian Water Monitor", "Bengal Tiger", "Caracal", 
-    "Cheetah", "Clouded Leopard", "Cougar", "Dhole", "Dingo", "Eurasian Lynx", 
-    "Formosan Black Bear", "Fossa", "Grizzly Bear", "Himalayan Brown Bear", 
-    "Jaguar", "Komodo Dragon", "Nile Monitor", "Polar Bear", "Red Fox", 
-    "Saltwater Crocodile", "Sand Cat", "Siberian Tiger", "Snow Leopard", 
-    "Spotted Hyena", "Striped Hyena", "Tasmanian Devil", "Timber Wolf", 
-    "West African Lion", "Wolverine"]);
-
     if (species1 && species2 && species1 === species2) {
-        // If the same species is selected, give em heck
         html = `<p>Looks like ${species1} really likes its own company! Try selecting different animals for a real compatibility check.</p>`;
     } else if (species2) {
         if (data[species1] && data[species1].compatibility && data[species1].compatibility[species2] !== undefined) {
@@ -115,16 +117,4 @@ function getDetailedCompatibilityDescription(species1, species2, level) {
         "0": `${species1} and ${species2} are incompatible and very hostile. Fighting and intimidation will occur.`
     };
     return descriptions[level] || "Compatibility information is unavailable."; // Default text if level is undefined
-}
-
-// Helper function to get numeric level from description for sorting
-function getDescriptionLevel(description) {
-    const levelMap = {
-        "Best compatibility—provides the interspecies enrichment bonus": 4,
-        "Very compatible—matching origin and habitat requirements": 3,
-        "Semi-compatible—slightly different terrain/plant preferences": 2,
-        "Incompatible animals—peaceful but have conflicting habitat requirements": 1,
-        "Hostile animals—will fight or intimidate": 0
-    };
-    return levelMap[description] || -1; // Return -1 for unknown descriptions
 }
