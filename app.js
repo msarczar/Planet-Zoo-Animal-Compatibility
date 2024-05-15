@@ -60,8 +60,10 @@ function populateDropdown(dropdown, data, includeEmpty = false) {
 function displayCompatibility(data, species1, species2, resultsDiv) {
     let html = '';
     if (species1 && species2 && species1 === species2) {
+        // Check if the same species is selected for both, and provide a humorous message
         html = `<p>Looks like ${species1} really likes its own company! Try selecting different animals for a real compatibility check.</p>`;
     } else if (species2) {
+        // Specific compatibility check for two selected species
         if (data[species1] && data[species1].compatibility && data[species1].compatibility[species2] !== undefined) {
             const compatibility = data[species1].compatibility[species2];
             const description = getDetailedCompatibilityDescription(species1, species2, compatibility);
@@ -70,7 +72,9 @@ function displayCompatibility(data, species1, species2, resultsDiv) {
             html = `<p>Compatibility data not available for ${species1} and ${species2}.</p>`;
         }
     } else {
+        // Compatibility grouping for one selected species
         if (data[species1] && data[species1].compatibility) {
+            html += `<p>Compatibility for ${species1} with others:</p>`;
             const compatibilityLevels = {};
             Object.keys(data[species1].compatibility).forEach(animal => {
                 const level = data[species1].compatibility[animal];
@@ -80,13 +84,8 @@ function displayCompatibility(data, species1, species2, resultsDiv) {
                 compatibilityLevels[level].push(animal);
             });
 
-            html += `<p>Compatibility for ${species1} with others:</p>`;
             Object.keys(compatibilityLevels).sort((a, b) => b - a).forEach(level => {
-                let animals = compatibilityLevels[level].map(animal => 
-                    highlightedAnimals.has(animal) 
-                    ? `<span class="highlighted-animal">${animal}</span>` 
-                    : animal
-                ).join(', ');
+                let animals = compatibilityLevels[level].join(', ');
                 html += `<p><span class="compatibility-${level}">${getCompatibilityDescription(level)}:</span> ${animals}</p>`;
             });
         } else {
