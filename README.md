@@ -9,7 +9,7 @@ The Animal Compatibility Checker is a simple web application that allows users t
 - **Easy to Use Interface**: User-friendly dropdown menus for animal selection.
 - **Instant Results**: Compatibility results are displayed immediately after selection.
 
-## CREDIT
+## Credit
 This app wouldn't be possible without the data collected and provided by Villanelle (Steam/Reddit). 
 Her spreadsheet has tons of awesome information way beyond compatibility linked here: 
 https://docs.google.com/spreadsheets/d/1J5YrIya-yduiAqBC-dEHyBYZ8Ev3KsTM6fyP7DsKUJQ/edit#gid=1480260872
@@ -40,8 +40,6 @@ Contributions to the Animal Compatibility Checker are welcome! Here are some way
 - **Reporting bugs**
 - **Suggesting enhancements**
 - **Pull Requests**
-
-Please read `CONTRIBUTING.md` for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
