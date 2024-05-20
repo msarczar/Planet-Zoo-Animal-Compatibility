@@ -11,7 +11,7 @@ The Animal Compatibility Checker is a simple web application that allows users t
 
 ## Credit
 This app wouldn't be possible without the data collected and provided by Villanelle (Steam/Reddit). 
-Her spreadsheet has tons of awesome information way beyond compatibility linked here: 
+Their spreadsheet has tons of awesome information way beyond compatibility linked here: 
 https://docs.google.com/spreadsheets/d/1J5YrIya-yduiAqBC-dEHyBYZ8Ev3KsTM6fyP7DsKUJQ/edit#gid=1480260872
 
 ## Usage
