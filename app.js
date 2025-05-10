@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to populate dropdowns
 function populateDropdown(dropdown, data, includeEmpty = false) {
     const highlightedAnimals = new Set([
-        "African Wild Dog", "American Alligator", "Amur Leopard", "Arctic Fox", 
-        "Arctic Wolf", "Asian Water Monitor", "Bengal Tiger", "Caracal", 
-        "Cheetah", "Clouded Leopard", "Cougar", "Dhole", "Dingo", "Eurasian Lynx", 
-        "Formosan Black Bear", "Fossa", "Grizzly Bear", "Himalayan Brown Bear", 
-        "Jaguar", "Komodo Dragon", "Nile Monitor", "Polar Bear", "Red Fox", 
-        "Saltwater Crocodile", "Sand Cat", "Siberian Tiger", "Snow Leopard", 
+        "African Leopard", "African Wild Dog", "American Alligator", "Amur Leopard", "Arctic Fox", 
+        "Arctic Wolf", "Asian Water Monitor", "Bengal Tiger", "Bush Dog", "Caracal", 
+        "Cheetah", "Clouded Leopard", "Cougar", "Coyote", "Dhole", "Dingo", "Eurasian Lynx", 
+        "Formosan Black Bear", "Fossa", "Greater Rhea", "Grizzly Bear", "Himalayan Brown Bear", 
+        "Jaguar", "Komodo Dragon", "Nile Monitor", "Ocelot", "Pallas's Cat", "Polar Bear", "Red Fox", 
+        "Saltwater Crocodile", "Sand Cat", "Siberian Tiger", "Sloth Bear", "Snow Leopard", "Spectacled Bear", 
         "Spotted Hyena", "Striped Hyena", "Tasmanian Devil", "Timber Wolf", 
         "West African Lion", "Wolverine"
     ]);
